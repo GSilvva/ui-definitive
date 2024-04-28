@@ -335,7 +335,9 @@ small {
   font: 700 18px/20px "Space Grotesk", sans-serif;
   letter-spacing: -0.36px;
   text-align: center;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 @media (max-width: 640px) {
   .button span {
@@ -499,13 +501,22 @@ small {
     display: none;
   }
 }
-.modal .container form {
+.modal .container .form {
   max-width: 380px;
   width: 100%;
   margin: 0 auto;
 }
-.modal .container form input {
+.modal .container .form fieldset {
+  position: relative;
   margin: 0 0 16px 0;
+}
+.modal .container .form fieldset img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+}
+.modal .container .form fieldset input {
   width: 100%;
   color: rgb(0, 0, 0);
   height: 48px;
@@ -513,18 +524,28 @@ small {
   background: rgb(255, 255, 255);
   font: 500 16px/20px "Libre Franklin", sans-serif;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 24px 0 48px;
 }
-.modal .container form input::-moz-placeholder {
+.modal .container .form fieldset input::-moz-placeholder {
   opacity: 0.5;
   color: rgb(0, 0, 0);
 }
-.modal .container form input::placeholder {
+.modal .container .form fieldset input::placeholder {
   opacity: 0.5;
   color: rgb(0, 0, 0);
 }
-.modal .container form button {
+.modal .container .form .button {
   width: 100%;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font: 700 18px/20px "Space Grotesk", sans-serif;
+  letter-spacing: -0.36px;
+}
+@media (max-width: 640px) {
+  .modal .container .form .button {
+    font: 700 16px/20px "Space Grotesk", sans-serif;
+    letter-spacing: -0.32px;
+  }
 }
 .modal .container p {
   text-align: center;
@@ -1109,7 +1130,7 @@ small {
 }
 .page__features .container ul li figure img:first-of-type {
   position: absolute;
-  top: 170px;
+  top: 0;
   left: -142px;
   filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.25));
 }
@@ -1117,15 +1138,12 @@ small {
   .page__features .container ul li figure img:first-of-type {
     width: 150px;
     left: -46px;
-    top: 102px;
+    top: -16px;
   }
-}
-.page__features .container ul li figure img:nth-of-type(2) {
-  width: 100%;
 }
 .page__features .container ul li figure img:last-of-type {
   position: absolute;
-  bottom: 75px;
+  top: 120px;
   right: -125px;
   filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.25));
 }
@@ -1133,8 +1151,11 @@ small {
   .page__features .container ul li figure img:last-of-type {
     width: 150px;
     right: -46px;
-    bottom: 110px;
+    top: 16px;
   }
+}
+.page__features .container ul li figure img:nth-of-type(2) {
+  width: 100%;
 }
 .page__features .container ul li h6 {
   display: flex;
@@ -1343,16 +1364,29 @@ small {
     padding: 0;
   }
 }
-.page__emphasis__cases {
-  display: flex;
-  gap: 30px;
+.page__emphasis__items {
+  overflow: hidden;
 }
-.page__emphasis__cases img {
-  max-width: initial;
+.page__emphasis__items__cases {
+  display: flex;
+  transition: unset;
+}
+.page__emphasis__items__cases__case {
+  padding-right: 30px;
+  min-width: 450px;
+  max-width: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: unset;
+  filter: saturate(0);
+  mix-blend-mode: luminosity;
+  opacity: 0.16;
 }
 @media (max-width: 640px) {
-  .page__emphasis__cases img {
-    height: 235px;
+  .page__emphasis__items__cases__case {
+    min-width: 214px;
+    max-width: 214px;
+    padding-right: 16px;
   }
 }
 .page__emphasis__box {
