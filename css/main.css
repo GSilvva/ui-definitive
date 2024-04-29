@@ -1332,11 +1332,11 @@ small {
     display: none;
   }
 }
-.page__certified .container div aside h2 {
+.page__certified .container div aside h3 {
   margin: 0 0 32px 0;
 }
 @media (max-width: 640px) {
-  .page__certified .container div aside h2 {
+  .page__certified .container div aside h3 {
     margin: 0 0 24px 0;
   }
 }
