@@ -118,12 +118,12 @@ button {
   cursor: pointer;
 }
 
-h2 {
+h3 {
   font: 500 48px/1 "Space Grotesk", sans-serif;
   letter-spacing: -0.96px;
 }
 @media (max-width: 640px) {
-  h2 {
+  h3 {
     font: 500 28px/32px "Space Grotesk", sans-serif;
     letter-spacing: -0.56px;
   }
@@ -944,11 +944,11 @@ small {
     top: 0;
   }
 }
-.page__modules__title h2 {
+.page__modules__title h3 {
   margin: 0 0 32px 0;
 }
 @media (max-width: 640px) {
-  .page__modules__title h2 {
+  .page__modules__title h3 {
     margin: 0 0 16px 0;
   }
 }
@@ -1001,13 +1001,13 @@ small {
     gap: 8px;
   }
 }
-.page__modules__exps dl dt span {
+.page__modules__exps dl dt p {
   color: rgb(137, 243, 99);
   flex: 2;
   font: 600 24px/32px "Space Grotesk", sans-serif;
 }
 @media (max-width: 640px) {
-  .page__modules__exps dl dt span {
+  .page__modules__exps dl dt p {
     font: 600 20px/32px "Space Grotesk", sans-serif;
   }
 }
@@ -1157,14 +1157,14 @@ small {
 .page__features .container ul li figure img:nth-of-type(2) {
   width: 100%;
 }
-.page__features .container ul li h6 {
+.page__features .container ul li h2 {
   display: flex;
   align-items: center;
   gap: 24px;
   margin: 0 0 48px 0;
 }
 @media (max-width: 640px) {
-  .page__features .container ul li h6 {
+  .page__features .container ul li h2 {
     text-align: center;
     margin: 0 0 24px 0;
   }
@@ -1195,19 +1195,19 @@ small {
     display: block;
   }
 }
-.page__phrase .container h6 {
+.page__phrase .container h2 {
   white-space: nowrap;
 }
 @media (max-width: 1024px) {
-  .page__phrase .container h6 {
+  .page__phrase .container h2 {
     margin: 0 0 48px 0;
   }
 }
-.page__phrase .container h2 {
+.page__phrase .container h3 {
   max-width: 960px;
   width: 100%;
 }
-.page__phrase .container h2 p {
+.page__phrase .container h3 p {
   position: relative;
   text-align: right;
   font: 500 96px/1 "Space Grotesk", sans-serif;
@@ -1215,22 +1215,22 @@ small {
   color: rgb(137, 243, 99);
 }
 @media (max-width: 1300px) {
-  .page__phrase .container h2 p {
+  .page__phrase .container h3 p {
     font-size: 90px;
   }
 }
 @media (max-width: 1024px) {
-  .page__phrase .container h2 p {
+  .page__phrase .container h3 p {
     font-size: 64px;
   }
 }
 @media (max-width: 640px) {
-  .page__phrase .container h2 p {
+  .page__phrase .container h3 p {
     font: 500 28px/32px "Space Grotesk", sans-serif;
     letter-spacing: -0.56px;
   }
 }
-.page__phrase .container h2 p div {
+.page__phrase .container h3 p div {
   position: absolute;
   top: 3px;
   right: 0;
@@ -1268,15 +1268,15 @@ small {
     min-height: initial;
   }
 }
-.page__teacher .container div h2 {
+.page__teacher .container div h3 {
   margin: 0 0 24px 0;
 }
-.page__teacher .container div h5 {
+.page__teacher .container div h4 {
   font: 500 20px/26px "Libre Franklin", sans-serif;
   margin: 0 0 40px 0;
 }
 @media (max-width: 1024px) {
-  .page__teacher .container div h5 {
+  .page__teacher .container div h4 {
     margin: 0 0 24px 0;
     font: 500 16px/23px "Libre Franklin", sans-serif;
   }
@@ -1498,18 +1498,18 @@ small {
     width: calc(100% - 64px);
   }
 }
-.page__emphasis__box__right h5 {
+.page__emphasis__box__right h3 {
   font: 600 24px/26px "Space Grotesk", sans-serif;
   letter-spacing: -0.48px;
   margin: 64px 0 20px 0;
 }
 @media (max-width: 1024px) {
-  .page__emphasis__box__right h5 {
+  .page__emphasis__box__right h3 {
     margin: 0 0 12px 0;
   }
 }
 @media (max-width: 640px) {
-  .page__emphasis__box__right h5 {
+  .page__emphasis__box__right h3 {
     font: 600 20px/24px "Space Grotesk", sans-serif;
     letter-spacing: -0.4px;
   }
@@ -1548,24 +1548,24 @@ small {
   height: auto;
   background: rgb(0, 0, 0);
 }
-.page__questions .container aside .swiper-slide h6 {
+.page__questions .container aside .swiper-slide h2 {
   opacity: 0.2;
   margin: 0 0 80px 0;
   font: 500 24px/32px "Space Grotesk", sans-serif;
   letter-spacing: -0.48px;
 }
 @media (max-width: 640px) {
-  .page__questions .container aside .swiper-slide h6 {
+  .page__questions .container aside .swiper-slide h2 {
     margin: 0 0 40px 0;
     font: 500 20px/1 "Space Grotesk", sans-serif;
     letter-spacing: -0.4px;
   }
 }
-.page__questions .container aside .swiper-slide h2 {
+.page__questions .container aside .swiper-slide h3 {
   margin: 0 0 32px 0;
 }
 @media (max-width: 640px) {
-  .page__questions .container aside .swiper-slide h2 {
+  .page__questions .container aside .swiper-slide h3 {
     margin: 0 0 16px 0;
     font: 500 26px/34px "Space Grotesk", sans-serif;
   }

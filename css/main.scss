@@ -144,7 +144,7 @@ button {
     cursor: pointer;
 }
 
-h2 {
+h3 {
   font: 500 48px/1 $space-grotesk;
   letter-spacing: -0.96px;
 
@@ -1024,7 +1024,7 @@ small {
         }
       }
 
-      h2 {
+      h3 {
         margin: 0 0 32px 0;
 
         @media (max-width: $sm) {
@@ -1082,7 +1082,7 @@ small {
             gap: 8px;
           }
 
-          span {
+          p {
             color: $green;
             flex: 2;
             font: 600 24px/32px $space-grotesk;
@@ -1267,7 +1267,7 @@ small {
             }
           }
 
-          h6 {
+          h2 {
             display: flex;
             align-items: center;
             gap: 24px;
@@ -1311,7 +1311,7 @@ small {
         display: block;
       }
 
-      h6 {
+      h2 {
         white-space: nowrap;
 
         @media (max-width: $md) {
@@ -1319,7 +1319,7 @@ small {
         }
       }
 
-      h2 {
+      h3 {
         max-width: 960px;
         width: 100%;
         
@@ -1386,11 +1386,11 @@ small {
           }
         }
 
-        h2 {
+        h3 {
           margin: 0 0 24px 0;
         }
 
-        h5 {
+        h4 {
           font: 500 20px/26px $libre-franklin;
           margin: 0 0 40px 0;
 
@@ -1643,7 +1643,7 @@ small {
           }
         }
 
-        h5 {
+        h3 {
           font: 600 24px/26px $space-grotesk;
           letter-spacing: -0.48px;
           margin: 64px 0 20px 0;
@@ -1697,7 +1697,7 @@ small {
             height: auto;
             background: $black;
 
-            h6 {
+            h2 {
               opacity: .2;
               margin: 0 0 80px 0;
               font: 500 24px/32px $space-grotesk;
@@ -1710,7 +1710,7 @@ small {
               }
             }
 
-            h2 {
+            h3 {
               margin: 0 0 32px 0;
 
               @media (max-width: $sm) {
