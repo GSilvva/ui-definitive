@@ -781,12 +781,18 @@ small {
 .page__header__icons .container div:first-of-type {
   border-left: 1px solid rgb(38, 38, 38);
 }
+.page__header__icons .container div h3,
+.page__header__icons .container div h4,
+.page__header__icons .container div h5,
 .page__header__icons .container div h6 {
   font: 600 20px/32px "Space Grotesk", sans-serif;
   letter-spacing: -0.4px;
   margin: 48px 0 8px 0;
 }
 @media (max-width: 640px) {
+  .page__header__icons .container div h3,
+  .page__header__icons .container div h4,
+  .page__header__icons .container div h5,
   .page__header__icons .container div h6 {
     margin: 32px 0 12px 0;
     font: 600 16px/14px "Space Grotesk", sans-serif;
