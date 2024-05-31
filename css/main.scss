@@ -509,10 +509,6 @@ small {
         font: 500 26px/32px $space-grotesk;
         letter-spacing: -0.52px;
         margin: 40px 0 32px 0;
-
-        br {
-          display: none;
-        }
       }
     }
 
@@ -861,6 +857,10 @@ small {
         top: 49.5%;
         left: 50%;
         animation: spin infinite 8s linear;
+        -webkit-animation: spin 8s linear infinite;
+        -moz-animation: spin 8s linear infinite;
+        -o-animation: spin 8s linear infinite;
+        -ms-animation: spin 8s linear infinite;
         max-width: initial;
 
         @keyframes spin {
@@ -868,7 +868,7 @@ small {
             transform: translate(-50%, -50%) rotate(360deg);
           }
           100% {
-            transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0deg);
           }
         }
 
@@ -1049,7 +1049,7 @@ small {
 
         @media (max-width: $sm) {
           width: calc(100% + 32px);
-          transform: translateX(-16px);
+          margin-left: -16px;
         }
 
         dt {
@@ -1482,10 +1482,12 @@ small {
           justify-content: space-between;
           align-items: center;
           border-radius: 1000px;
-          width: 123px;
+          min-width: 123px;
+          max-width: 123px;
 
           @media (max-width: $sm) {
-            width: 90px;
+            min-width: 90px;
+            max-width: 90px;
             padding: 44px 0;
           }
 

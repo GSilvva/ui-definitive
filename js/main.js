@@ -53,9 +53,10 @@ const wrapper = document.querySelector(".page__cases__marquee__images");
 const boxes = gsap.utils.toArray(".page__cases__marquee__images__image");
 
 let activeElement;
+let loop;
 
 window.addEventListener("DOMContentLoaded", () => {
-  const loop = horizontalLoop(boxes, {
+  loop = horizontalLoop(boxes, {
     paused: false, 
     draggable: true,
     center: false,
@@ -65,15 +66,29 @@ window.addEventListener("DOMContentLoaded", () => {
       activeElement = element;
     }
   });
-})
+
+  // Add event listeners to pause and play the animation on hover and touch
+  const pauseAnimation = () => {
+    loop.pause();
+  };
+
+  const resumeAnimation = () => {
+    loop.play();
+  };
+
+  wrapper.addEventListener("mouseenter", pauseAnimation);
+  wrapper.addEventListener("mouseleave", resumeAnimation);
+  wrapper.addEventListener("touchstart", pauseAnimation);
+  wrapper.addEventListener("touchend", resumeAnimation);
+});
 
 function horizontalLoop(items, config) {
-	items = gsap.utils.toArray(items);
-	config = config || {};
-	let onChange = config.onChange,
+  items = gsap.utils.toArray(items);
+  config = config || {};
+  let onChange = config.onChange,
       lastIndex = 0,
       tl = gsap.timeline({repeat: config.repeat, onUpdate: onChange && function() {
-        let i = tl.closestIndex()
+        let i = tl.closestIndex();
         if (lastIndex !== i) {
           lastIndex = i;
           onChange(items[i], i);
@@ -88,7 +103,7 @@ function horizontalLoop(items, config) {
       curIndex = 0,
       center = config.center,
       pixelsPerSecond = (config.speed || 1) * 100,
-      snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+      snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1),
       timeOffset = 0, 
       container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
       totalWidth,
@@ -102,7 +117,7 @@ function horizontalLoop(items, config) {
           spaceBefore[i] = b2.left - (i ? b1.right : b1.left);
           b1 = b2;
         });
-        gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+        gsap.set(items, {
           xPercent: i => xPercents[i]
         });
         totalWidth = getTotalWidth();
@@ -154,38 +169,38 @@ function horizontalLoop(items, config) {
          deep && tl.draggable ? tl.time(times[curIndex], true) : tl.progress(progress, true);
       },
       proxy;
-	gsap.set(items, {x: 0});
+  gsap.set(items, {x: 0});
   populateWidths();
-	populateTimeline();
+  populateTimeline();
   populateOffsets();
   window.addEventListener("resize", () => refresh(true));
-	function toIndex(index, vars) {
-		vars = vars || {};
-		(Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
-		let newIndex = gsap.utils.wrap(0, length, index),
-			time = times[newIndex];
-    if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
-			time += tl.duration() * (index > curIndex ? 1 : -1);
-		}
+  function toIndex(index, vars) {
+    vars = vars || {};
+    (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length);
+    let newIndex = gsap.utils.wrap(0, length, index),
+      time = times[newIndex];
+    if (time > tl.time() !== index > curIndex) {
+      time += tl.duration() * (index > curIndex ? 1 : -1);
+    }
     if (time < 0 || time > tl.duration()) {
       vars.modifiers = {time: timeWrap};
     }
-		curIndex = newIndex;
-		vars.overwrite = true;
+    curIndex = newIndex;
+    vars.overwrite = true;
     gsap.killTweensOf(proxy);
-		return tl.tweenTo(time, vars);
-	}
-	tl.next = vars => toIndex(curIndex+1, vars);
-	tl.previous = vars => toIndex(curIndex-1, vars);
-	tl.current = () => curIndex;
-	tl.toIndex = (index, vars) => toIndex(index, vars);
+    return tl.tweenTo(time, vars);
+  }
+  tl.next = vars => toIndex(curIndex+1, vars);
+  tl.previous = vars => toIndex(curIndex-1, vars);
+  tl.current = () => curIndex;
+  tl.toIndex = (index, vars) => toIndex(index, vars);
   tl.closestIndex = setCurrent => {
     let index = getClosest(times, tl.time(), tl.duration());
     setCurrent && (curIndex = index);
     return index;
   };
-	tl.times = times;
-  tl.progress(1, true).progress(0, true); // pre-render for performance
+  tl.times = times;
+  tl.progress(1, true).progress(0, true);
   if (config.reversed) {
     tl.vars.onReverseComplete();
     tl.reverse();
@@ -225,7 +240,7 @@ function horizontalLoop(items, config) {
   }
   tl.closestIndex(true);
   onChange && onChange(items[curIndex], curIndex);
-	return tl;
+  return tl;
 }
 
 // EXPANSÍVEIS
