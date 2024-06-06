@@ -781,11 +781,13 @@ small {
   top: 49.5%;
   left: 50%;
   animation: spin infinite 8s linear;
-  -webkit-animation: spin 8s linear infinite;
-  -moz-animation: spin 8s linear infinite;
-  -o-animation: spin 8s linear infinite;
-  -ms-animation: spin 8s linear infinite;
   max-width: initial;
+}
+@media (max-width: 1024px) {
+  .page__metodology__illust img {
+    animation: unset;
+    transform: translate(-50%, -50%);
+  }
 }
 @keyframes spin {
   0% {
@@ -1213,7 +1215,7 @@ small {
   }
 }
 .page__features .container ul li figure img:first-of-type {
-  top: -32px;
+  top: -64px;
   right: -80px;
 }
 @media (max-width: 640px) {
@@ -1223,7 +1225,7 @@ small {
   }
 }
 .page__features .container ul li figure img:last-of-type {
-  top: 48px;
+  top: -16px;
   left: -96px;
 }
 @media (max-width: 640px) {
