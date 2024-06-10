@@ -879,15 +879,15 @@ small {
         transition: unset;
 
         &__image {
-          min-width: 572px;
-          max-width: 572px;
+          min-width: 571px;
+          max-width: 571px;
           padding-right: 32px;
           transition: unset;
           object-fit: cover;
 
           @media (max-width: $sm) {
-            min-width: 327px;
-            max-width: 327px;
+            min-width: 326px;
+            max-width: 326px;
             padding-right: 24px;
           }
         }

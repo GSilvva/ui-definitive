@@ -800,8 +800,8 @@ small {
   transition: unset;
 }
 .page__cases__marquee__images__image {
-  min-width: 572px;
-  max-width: 572px;
+  min-width: 571px;
+  max-width: 571px;
   padding-right: 32px;
   transition: unset;
   -o-object-fit: cover;
@@ -809,8 +809,8 @@ small {
 }
 @media (max-width: 640px) {
   .page__cases__marquee__images__image {
-    min-width: 327px;
-    max-width: 327px;
+    min-width: 326px;
+    max-width: 326px;
     padding-right: 24px;
   }
 }
