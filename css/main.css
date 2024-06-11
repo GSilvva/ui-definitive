@@ -1292,11 +1292,13 @@ small {
   }
 }
 .page__teacher .container > figure {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 123px;
   gap: 40px;
 }
 @media (max-width: 640px) {
   .page__teacher .container > figure {
+    grid-template-columns: 1fr 90px;
     gap: 30px;
   }
 }
@@ -1313,13 +1315,9 @@ small {
   justify-content: space-between;
   align-items: center;
   border-radius: 1000px;
-  min-width: 123px;
-  max-width: 123px;
 }
 @media (max-width: 640px) {
   .page__teacher .container > figure div {
-    min-width: 90px;
-    max-width: 90px;
     padding: 44px 0;
   }
 }
