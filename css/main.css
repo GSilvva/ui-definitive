@@ -303,17 +303,6 @@ small {
   position: relative;
   padding: 2px;
 }
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(0deg, rgb(97, 190, 153) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border-radius: 8px;
-}
 .button span {
   height: 64px;
   position: relative;
@@ -321,7 +310,7 @@ small {
   color: #000000;
   font: 600 20px/1 "Inter", sans-serif;
   background: #61BE99;
-  border-radius: 8px;
+  border-radius: 1000px;
   display: flex;
   align-items: center;
   padding: 0 32px;
@@ -337,7 +326,7 @@ small {
   }
 }
 .button:hover span {
-  background: #52a783;
+  background: #FFFFFF;
 }
 
 .subtitle {
@@ -422,18 +411,18 @@ small {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 16px;
+  left: 20px;
 }
 .modal .container .form fieldset input {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 1000px;
   color: #06080A;
   height: 56px;
   display: flex;
   align-items: center;
   background: #FFFFFF;
   font: 500 16px/20px "Inter", sans-serif;
-  padding: 0 24px 0 48px;
+  padding: 0 24px 0 52px;
 }
 .modal .container .form fieldset input::-moz-placeholder {
   opacity: 0.5;
@@ -449,7 +438,7 @@ small {
   background: #06080A;
   color: #FFFFFF;
   font: 600 16px/20px "Inter", sans-serif;
-  border-radius: 8px;
+  border-radius: 1000px;
   padding: 18px;
 }
 .modal .container p {
@@ -800,8 +789,6 @@ small {
   transition: unset;
 }
 .page__cases__marquee__images__image {
-  min-width: 571px;
-  max-width: 571px;
   padding-right: 32px;
   transition: unset;
   -o-object-fit: cover;
@@ -809,9 +796,17 @@ small {
 }
 @media (max-width: 640px) {
   .page__cases__marquee__images__image {
-    min-width: 326px;
-    max-width: 326px;
     padding-right: 24px;
+  }
+}
+.page__cases__marquee__images__image img {
+  min-width: 540px;
+  max-width: 540px;
+}
+@media (max-width: 640px) {
+  .page__cases__marquee__images__image img {
+    min-width: 304px;
+    max-width: 304px;
   }
 }
 .page__cases__bottom {

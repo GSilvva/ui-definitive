@@ -348,18 +348,6 @@ small {
   position: relative;
   padding: 2px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(0deg, rgba(97, 190, 153, 1) 0%, rgba(255,255,255,.8) 100%);
-    border-radius: 8px;
-  }
-
   span {
     height: 64px;
     position: relative;
@@ -367,7 +355,7 @@ small {
     color: #000000;
     font: 600 20px/1 $inter;
     background: $green;
-    border-radius: 8px;
+    border-radius: 1000px;
     display: flex;
     align-items: center;
     padding: 0 32px;
@@ -383,9 +371,8 @@ small {
   }
 
   &:hover {
-
     span {
-      background: #52a783;      
+      background: $white;      
     }
   }
 }
@@ -471,19 +458,19 @@ small {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          left: 16px;
+          left: 20px;
         }
 
         input {
           width: 100%;
-          border-radius: 8px;
+          border-radius: 1000px;
           color: $black;
           height: 56px;
           display: flex;
           align-items: center;
           background: $white;
           font: 500 16px/20px $inter;
-          padding: 0 24px 0 48px;
+          padding: 0 24px 0 52px;
   
           &::placeholder {
             opacity: .5;
@@ -498,7 +485,7 @@ small {
         background: $black;
         color: $white;
         font: 600 16px/20px $inter;
-        border-radius: 8px;
+        border-radius: 1000px;
         padding: 18px;
       }
     }
@@ -879,16 +866,22 @@ small {
         transition: unset;
 
         &__image {
-          min-width: 571px;
-          max-width: 571px;
           padding-right: 32px;
           transition: unset;
           object-fit: cover;
 
           @media (max-width: $sm) {
-            min-width: 326px;
-            max-width: 326px;
             padding-right: 24px;
+          }
+
+          img {
+            min-width: 540px;
+            max-width: 540px;
+
+            @media (max-width: $sm) {
+              min-width: 304px;
+              max-width: 304px;
+            }
           }
         }
       }
